@@ -1,0 +1,11 @@
+
+<h1>:) Movie Searcher</h1>
+
+<app-movie-tool-bar class="tool-bar" (searchChanged)="search($event)" (addMovieClicked)="create($event)"></app-movie-tool-bar>
+
+
+<div *ngIf="messageService.messages && messageService.messages.length > 0" class="ErrorMessage"> {{messageService.messages[0]}} </div>
+
+<div *ngIf="movies">
+  <app-movie-list [movies]="movies" (updateMovieClick)="update($event)" (addMovieClicked)="create($event)"></app-movie-list>
+</div>

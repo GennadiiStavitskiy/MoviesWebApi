@@ -1,0 +1,29 @@
+<h1 mat-dialog-title>{{data.dialogTitle}}</h1>
+<form #dialogForm="ngForm">
+<div mat-dialog-content>
+  <mat-form-field>
+    <input matInput placeholder="Title" [(ngModel)]="data.movie.title" id="title" name="title"  required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Classification" [(ngModel)]="data.movie.classification" id="classification" name="classification"   required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Genre" [(ngModel)]="data.movie.genre" id="genre" name="genre"  required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Rating" [(ngModel)]="data.movie.rating" id="rating" name="rating"  required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Release Date" [(ngModel)]="data.movie.releaseDate" id="releaseDate" name="releaseDate" required>
+  </mat-form-field>
+  <mat-form-field>
+    <textarea matInput placeholder="Cast" [(ngModel)]="data.movie.castStr" id="castStr" name="castStr" 
+              matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="5" required></textarea>
+  </mat-form-field>
+ 
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()" type="submit">Cancel</button>
+  <button mat-button [mat-dialog-close]="data.movie" [disabled]="!dialogForm.form.valid" cdkFocusInitial>Save</button>
+</div>
+</form>

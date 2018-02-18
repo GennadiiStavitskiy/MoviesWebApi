@@ -1,0 +1,22 @@
+
+<mat-form-field>
+  <input matInput placeholder="Search" (input)="onSearchChange($event.target.value)">
+</mat-form-field>
+
+<mat-form-field>
+  <mat-select [(ngModel)]="sortBy" placeholder="Sort By" (ngModelChange)="onChangeSortBy($event)">
+    <mat-option *ngFor="let sort of sortByArray" [value]="sort">
+      {{ sort.name }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-checkbox class="example-margin" [(ngModel)]="isDescending"
+              (ngModelChange)="onChangeSortDirection($event)">Descending</mat-checkbox>
+
+
+
+<button  mat-fab color="accent" (click)="addMovieClick()">+</button>
+
+
+
