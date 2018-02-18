@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
 import { take } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 import { Movie } from '../app.component';
 import { MessageService } from './message.service';
@@ -18,6 +19,10 @@ export class MovieApiService {
   private baseUrl = "http://localhost:50590/api/movies";  
 
   constructor(private http: HttpClient, private messageService: MessageService) {
+	  
+	  if(environment.apiEndpoint){
+		this.baseUrl = environment.apiEndpoint;
+	  }	  
   }
 
   getMovies(searchQuery: string): Observable<Movie[]> {
