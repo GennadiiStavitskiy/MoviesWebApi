@@ -19,6 +19,10 @@ Solution projects:
  - Smile.Movies.Backend.Interfaces - .Net Core 2.0 class library includes backend interfaces
  - Smile.Movies.Dto - .Net Core 2.0 class library includes models (DTOs).
  - Smile.Movies.Shared - .Net Core 2.0 class library includes shared helpers and utilities classes.
+ - Smile.Movies.Web - .Net Core 2.0 Mvc with Angular front-end.
+ 
+ - Smile.AngularCli.Client - Angular CLI project. Some details regarding it see below.
+ 
  
  Test projects (MSTEST):
  - Smile.Movies.Api.Tests
@@ -160,4 +164,19 @@ Design Patterns are included:
   * Adapter - DataSourceAdapter.cs - Wraps the MoviewLibrary.MovieDataSource class with the IDataSourceAdapter interface
   * Strategy - SortingStrategies (SortingService) - Represents sorting strategies by particular fields. One strategy one field. 
 
-------------------------------------------------------------------------------------------------------
+------------------
+ Web Clients
+------------------
+1) Smile.Movies.Web - .Net Core 2.0 Mvc with Angular front-end.
+ 1.1 Initialize node_modules run the next command inside the project folder: npm install
+ 1.2 Rebuild solution. Could be required 2-3 times due nuget dependencies.
+ 1.3 Set multi projects start order: first - Smile.Movies.Api, second - Smile.Movies.Web
+ 1.4 Run solution.
+
+2) Smile.AngularCli.Client - Angular CLI project.
+   2.1 Initialize node_modules run the next command inside the project folder: npm install
+   2.2 Run under CLI. The Angular CLI should be installed on PC https://angular.io/guide/quickstart
+       Cmd command: ng serve --open
+	   
+----------------------------------------------------------------------------------------------------------------------
+
