@@ -171,11 +171,13 @@ Design Patterns are included:
  1.1 Initialize node_modules run the next command inside the project folder: npm install
  1.2 Rebuild solution. Could be required 2-3 times due nuget dependencies.
  1.3 Set multi projects start order: first - Smile.Movies.Api, second - Smile.Movies.Web
- 1.4 Run solution.
+ 1.4 If needs to update baseUrl = "http://localhost:50590/api/movies"; in Smile.Movies.Web\ClientApp\app\components\shared\movie-api.service.ts      
+ 1.5 Run solution.
 
 2) Smile.AngularCli.Client - Angular CLI project.
    2.1 Initialize node_modules run the next command inside the project folder: npm install
-   2.2 Run under CLI. The Angular CLI should be installed on PC https://angular.io/guide/quickstart
+   2.2 apiEndpoint setting located Smile.AngularCli.Client\src\environments\environment.ts - apiEndpoint: "http://localhost:50590/api/movies"
+   2.3 Run under CLI. The Angular CLI should be installed on PC https://angular.io/guide/quickstart
        Cmd command: ng serve --open
 	   
 ----------------------------------------------------------------------------------------------------------------------
